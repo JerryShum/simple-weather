@@ -10,7 +10,7 @@ function App() {
       async function apiCall() {
          try {
             const response = await fetch(
-               "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Toronto?unitGroup=metric&key=HSCGAMJMGPCQ2H4TL673GQABT&contentType=json"
+               "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Toronto?unitGroup=metric&iconSet=icons2&key=HSCGAMJMGPCQ2H4TL673GQABT&contentType=json"
             );
 
             const data = await response.json();
