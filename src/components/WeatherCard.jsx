@@ -8,7 +8,7 @@ export default function WeatherCard({ icon, date, temperature, description }) {
    const dayLabel = isToday ? "Today" : dayNames[dateJS.getDay()];
 
    return (
-      <div className=" last-of-type:border-r border-r p-2 w-full ">
+      <div className=" last-of-type:border-r-0 border-r p-2 w-full ">
          <div>
             <span className="font-semibold text-lg">{dayLabel}</span>
             <span> | {dateJS.toLocaleDateString()}</span>
