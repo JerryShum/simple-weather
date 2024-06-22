@@ -5,6 +5,8 @@ import WeatherCard from "./components/WeatherCard";
 
 function App() {
    const [weatherData, setWeatherData] = useState({});
+   const forecast = weatherData["days"];
+   console.log(forecast);
 
    useEffect(function () {
       async function apiCall() {
@@ -28,13 +30,11 @@ function App() {
       <div className="h-screen flex flex-col justify-center items-center">
          <h1 className="mb-5 font-bold text-4xl">Simple Weather</h1>
          <h2 className="mb-5 font-medium text-2xl">Location - Toronto</h2>
+
          <WeatherList>
-            <WeatherCard />
-            <WeatherCard />
-            <WeatherCard />
-            <WeatherCard />
-            <WeatherCard />
-            <WeatherCard />
+            {forecast?.slice(0, 7).map((day, index) => (
+               <WeatherCard icon={day["icon"]} key={index} />
+            ))}
          </WeatherList>
       </div>
    );
