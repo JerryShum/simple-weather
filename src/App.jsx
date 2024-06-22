@@ -9,6 +9,7 @@ function App() {
    const [weatherData, setWeatherData] = useState(null);
    const [loading, setLoading] = useState(false);
    const forecast = weatherData ? weatherData["days"] : "";
+   const APIkey = "";
 
    useEffect(
       function () {
@@ -17,7 +18,7 @@ function App() {
             try {
                if (location) {
                   const response = await fetch(
-                     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latLng}?unitGroup=metric&iconSet=icons2&key=HSCGAMJMGPCQ2H4TL673GQABT&contentType=json`
+                     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latLng}?unitGroup=metric&iconSet=icons2&key=${APIkey}&contentType=json`
                   );
 
                   const data = await response.json();
