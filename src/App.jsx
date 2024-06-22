@@ -32,8 +32,14 @@ function App() {
          <h2 className="mb-5 font-medium text-2xl">Location - Toronto</h2>
 
          <WeatherList>
-            {forecast?.slice(0, 7).map((day, index) => (
-               <WeatherCard icon={day["icon"]} key={index} />
+            {forecast?.slice(1, 8).map((day, index) => (
+               <WeatherCard
+                  icon={day["icon"]}
+                  date={day["datetime"]}
+                  temperature={day["feelslike"]}
+                  description={day["description"]}
+                  key={index}
+               />
             ))}
          </WeatherList>
       </div>

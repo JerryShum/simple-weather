@@ -1,6 +1,6 @@
 export default function WeatherList({ children }) {
    return (
-      <div className="">
+      <div className="mx-48">
          <h2 className=" font-semibold text-lg underline underline-offset-2">
             7-Day Forecast
          </h2>

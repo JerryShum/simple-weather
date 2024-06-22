@@ -1,9 +1,9 @@
-export default function WeatherIcon({ iconLabel }) {
+export default function WeatherIcon({ iconLabel, description }) {
    return (
       <img
          src={`/src/svg/${iconLabel}.svg`}
          alt={iconLabel}
-         className="h-15 w-20"
+         className="h-40 w-40"
       />
    );
 }
