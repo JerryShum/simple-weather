@@ -65,10 +65,6 @@ function App() {
             <p>Loading...</p>
          ) : weatherData ? (
             <>
-               <h2 className="mb-5 font-medium text-2xl">
-                  Location - {weatherData["timezone"]?.split("/").slice(1, 2)}
-               </h2>
-
                <WeatherList>
                   {forecast?.slice(1, 8).map((day, index) => (
                      <WeatherCard
