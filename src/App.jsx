@@ -9,7 +9,7 @@ function App() {
    const [weatherData, setWeatherData] = useState(null);
    const [loading, setLoading] = useState(false);
    const forecast = weatherData ? weatherData["days"] : "";
-   const APIkey = "";
+   const APIkey = import.meta.env.VITE_API_KEY;
 
    useEffect(
       function () {
@@ -20,6 +20,7 @@ function App() {
                   const response = await fetch(
                      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latLng}?unitGroup=metric&iconSet=icons2&key=${APIkey}&contentType=json`
                   );
+                  console.log(response);
 
                   const data = await response.json();
                   setWeatherData(data);
@@ -36,7 +37,7 @@ function App() {
 
          apiCall();
       },
-      [latLng]
+      [latLng, APIkey]
    );
 
    function handleClick() {
@@ -52,6 +53,7 @@ function App() {
          const longitude = position.coords.longitude;
          setLatLng(`${latitude}, ${longitude}`);
       }
+      console.log(position);
 
       function error() {
          console.log("Unable to retrieve your location");
