@@ -53,7 +53,6 @@ function App() {
          const longitude = position.coords.longitude;
          setLatLng(`${latitude}, ${longitude}`);
       }
-      console.log(position);
 
       function error() {
          console.log("Unable to retrieve your location");
